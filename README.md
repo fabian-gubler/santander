@@ -1,7 +1,9 @@
 # Santander - Data Science Kaggle Competition
 
 Ready to dive into the details our strategy for the Kaggle competition? 
-Check out our comprehensive report here: [Document](PDF)
+
+
+Check out our comprehensive report here: [Document](https://raw.githubusercontent.com/fabian-gubler/santander/main/Project_Report.pdf)
 
 ## Project Description
 This repository was created by students at the University of St. Gallen for the Data Science course. It contains solutions for the Kaggle competition on Santander Customer Transaction Prediction, which can be found at the following link: https://www.kaggle.com/competitions/santander-customer-transaction-prediction/overview.
