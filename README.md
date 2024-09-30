@@ -1,18 +1,21 @@
 # Santander - Data Science Kaggle Competition
 
-Ready to dive into the details of our strategy for the Kaggle competition? 
+### :books: **Final Project Report**:  
+**[Data Science Project Report – Santander Customer Transaction Prediction](https://raw.githubusercontent.com/fabian-gubler/santander/main/Project_Report.pdf)** – Click the link for a detailed report of our Santandar Kaggle Competition
 
-
-Check out our comprehensive report here: [Project report](https://raw.githubusercontent.com/fabian-gubler/santander/main/Project_Report.pdf)
+---
 
 ## Project Description
-This repository was created by students at the University of St. Gallen for the Data Science course. It contains solutions for the Kaggle competition on Santander Customer Transaction Prediction, which can be found at the following link: https://www.kaggle.com/competitions/santander-customer-transaction-prediction/overview.
 
-The objective of this competition is to predict which customers will make a specific transaction in the future, regardless of the amount of money involved in the transaction. This repository contains the data and code necessary to reproduce the analysis and modeling steps taken to solve this challenge.
+This repository includes the complete solution to the Kaggle competition on **Santander Customer Transaction Prediction**. The challenge aimed to predict which customers will make specific transactions in the future, based on anonymized features, regardless of the transaction amount.
 
-## Installation 
+We focused on building robust machine learning models using **LightGBM (LGBM)** and **Convolutional Neural Networks (CNN)**, employing feature engineering and data augmentation techniques to optimize performance.
 
-This project requires Python 3.11.0 or higher. It is recommended to use a virtual environment to manage the project dependencies. To set up a virtual environment and install the required packages, run the following commands:
+Kaggle competition overview: [Santander Kaggle Competition](https://www.kaggle.com/competitions/santander-customer-transaction-prediction/overview).
+
+## Installation
+
+To get started with this project, you’ll need **Python 3.11.0** or higher. We recommend using a virtual environment to manage dependencies. Follow these steps to set it up:
 
 ```bash
 python3 -m venv env
@@ -20,51 +23,56 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-The requirements.txt file contains the necessary packages  and their versions. These packages are needed to run the Jupyter notebooks in this project.
-
-The Jupyter notebooks in this project are self-contained and do not require any additional runtime parameters. Simply run the notebooks as is to reproduce the results.
-
-It is recommended to use JupyterLab to open and run the notebooks. To install JupyterLab, run the following command:
-
+The `requirements.txt` includes all necessary dependencies to run the **Jupyter notebooks** included in the project. We also recommend using **JupyterLab** for running and exploring the notebooks:
 
 ```bash
 pip install jupyterlab
-```
-
-Once the dependencies are installed, you can start JupyterLab by running the following command:
-
-```bash
 jupyter lab
 ```
 
-This will open JupyterLab in your web browser. From there, you can navigate to the notebooks  in this project and run them.
+This will open JupyterLab in your browser, where you can navigate to the project’s notebooks and run them to reproduce the results.
 
-## Notes on Data set 
-The data for this project is sourced from the [Kaggle - Santander Customer Transaction Prediction](https://www.kaggle.com/c/santander-customer-transaction-prediction). The competition provides a dataset in the form of data.csv files. These files can be found in `raw data` directory, which can be found in the `data` directory of this repository.
+---
 
-Alternatively, the data can be downloaded directly from the Kaggle competition page. To do so, you will need to create a Kaggle account and accept the terms of the competition. Once you have done this, you can click on the "Data" tab on the competition page and then click the "Download All" button to download the data to your local machine.
+## Dataset Information
 
-## Contents
+The dataset for this project was sourced from the **Kaggle Santander Customer Transaction Prediction** competition. It can be found in the `data` directory, where it is divided into:
 
-This repository contains the data and code for our data science project. It includes the following:
+- **train.csv**: The training set with labels
+- **test.csv**: The test set without labels
+- **sample_submission.csv**: A sample submission file provided by Kaggle
 
-### Data
+For more details or to download the data directly, visit the competition page: [Santander Kaggle Data](https://www.kaggle.com/c/santander-customer-transaction-prediction/data).
 
-The data folder contains the train, set and sample submission csv files. (Normally the data folder would also have contained various versions of train and test data enriched with variables from our feature engineering, but they were too big in terms of size to include in the submission on canvas.)
+## Repository Contents
 
-### Engineering
+This repository is organized as follows:
 
-The engineering folder contains the two notebooks we used for the feature engineering of version 1 and version 2 explained in the report.
+### 1. **Data**
+- Contains raw and processed data files for training and testing the models.
 
-### Exploration
+### 2. **Engineering**
+- This folder contains notebooks for **Feature Engineering** (version 1 and version 2), where we implemented techniques such as unique counts and reverse feature engineering.
 
-The exploration folder contains the notebook with our exploratory data analysis which led to many insights which were crucial for the feature engineering.
+### 3. **Exploration**
+- The exploratory data analysis (EDA) notebook can be found here. This analysis was crucial for shaping our feature engineering decisions and model development.
 
-### Models
+### 4. **Models**
+- Includes subfolders for different model types, focusing primarily on **LGBM** and **CNN** models. Additional archives contain early-stage models, and the blending folder holds the notebook used for our final score blending of the best CNN and LGBM models.
 
-The models folder contains subfolders for the different models we trained. In the end our focus was on the lgbm and cnn models. Some archive folders contain additional notebooks from the initial phases of our exploration which were less relevant towards the end. The blending folder contains the notebook with the simple linear combination of our best CNN and LGBM model used to obtain our final score.
+### 5. **Submission**
+- Contains various model-generated predictions for Kaggle submission, including the final blend of our best LGBM and CNN models in `submission_blending.csv`.
 
-### Submission
+## Key Learnings
 
-The submission folder contains the sample submission csv file from Kaggle filled with the predictions of our model for submission on Kaggle. The various_submission folder contains the submission generated by various models and the final_submission folder contains the submission of our best lgbm mode, best cnn model and our ultimate submission which is the blend of those two models (submission_blending.csv).
+1. **Feature Engineering**: Feature engineering had a significant impact on model performance. Techniques like unique counts and reverse features helped us push our models beyond the baseline.
+   
+2. **Model Blending**: Combining CNN and LGBM models via linear blending proved to be a successful strategy, improving our final AUC score.
 
+3. **Data Imbalance Handling**: Oversampling the minority class (customers with transactions) was essential to prevent bias and optimize model generalization.
+
+4. **Performance Optimization**: Extensive experimentation with hyperparameters and the application of data augmentation techniques helped us fine-tune our models and achieve high AUC scores.
+
+---
+
+Feel free to explore the code and try the models yourself. Should you have any questions or feedback, we would be happy to connect!
